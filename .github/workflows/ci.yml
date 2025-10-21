@@ -28,6 +28,12 @@ jobs:
     - name: Install correct npm version
       run: npm install -g npm@7.0.0
         
+    - name: Fix node-sass compatibility
+      working-directory: codebase/rdicidr-0.1.0
+      run: |
+        sed -i '/"node-sass"/d' package.json
+        npm pkg set dependencies.sass="^1.69.0"
+        
     - name: Install dependencies
       working-directory: codebase/rdicidr-0.1.0
       run: npm install --legacy-peer-deps
