@@ -26,7 +26,7 @@ jobs:
         cache-dependency-path: codebase/rdicidr-0.1.0/package-lock.json
         
     - name: Install correct npm version
-      run: npm install -g npm@7
+      run: npm install -g npm@7.0.0
         
     - name: Install dependencies
       working-directory: codebase/rdicidr-0.1.0
